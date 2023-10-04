@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "assignment1.html",
+    "href": "assignment1.html",
+    "title": "Assignment 1",
+    "section": "",
+    "text": "Here’s an example of Anscombe’s data from 1973 that I ran through an executable cell, which turned it into scatter plots with a regression line demonstrating the “Line of Best Fit” for all the data.\n\n#| code-fold: true\n#| code-summary: \"Show the code\"\n\n## Anscombe (1973) Quartlet\n\ndata(anscombe)  # Load Anscombe's data\nView(anscombe) # View the data\nsummary(anscombe)\n\n## Simple version\nplot(anscombe$x1,anscombe$y1)\nsummary(anscombe)\n\n# Create four model objects\nlm1 &lt;- lm(y1 ~ x1, data=anscombe)\nsummary(lm1)\nlm2 &lt;- lm(y2 ~ x2, data=anscombe)\nsummary(lm2)\nlm3 &lt;- lm(y3 ~ x3, data=anscombe)\nsummary(lm3)\nlm4 &lt;- lm(y4 ~ x4, data=anscombe)\nsummary(lm4)\nplot(anscombe$x1,anscombe$y1)\nabline(coefficients(lm1))\nplot(anscombe$x2,anscombe$y2)\nabline(coefficients(lm2))\nplot(anscombe$x3,anscombe$y3)\nabline(coefficients(lm3))\nplot(anscombe$x4,anscombe$y4)\nabline(coefficients(lm4))\n\n\n## Fancy version (per help file)\n\nff &lt;- y ~ x\nmods &lt;- setNames(as.list(1:4), paste0(\"lm\", 1:4))\n\n# Plot using for loop\nfor(i in 1:4) {\n  ff[2:3] &lt;- lapply(paste0(c(\"y\",\"x\"), i), as.name)\n  ## or   ff[[2]] &lt;- as.name(paste0(\"y\", i))\n  ##      ff[[3]] &lt;- as.name(paste0(\"x\", i))\n  mods[[i]] &lt;- lmi &lt;- lm(ff, data = anscombe)\n  print(anova(lmi))\n}\n\nsapply(mods, coef)  # Note the use of this function\nlapply(mods, function(fm) coef(summary(fm)))\n\n# Preparing for the plots\nop &lt;- par(mfrow = c(2, 2), mar = 0.1+c(4,4,1,1), oma =  c(0, 0, 2, 0))\n\n# Plot charts using for loop\nfor(i in 1:4) {\n  ff[2:3] &lt;- lapply(paste0(c(\"y\",\"x\"), i), as.name)\n  plot(ff, data = anscombe, col = \"red\", pch = 21, bg = \"orange\", cex = 1.2,\n       xlim = c(3, 19), ylim = c(3, 13))\n  abline(mods[[i]], col = \"blue\")\n}\nmtext(\"Anscombe's 4 Regression data sets\", outer = TRUE, cex = 1.5)\npar(op)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExamples of “generative art” that I found through a Google search can be found through the links I posted on my homepage of this website.\nHere’s my spring leaf after running this Fall.R script in an executable cell where I changed the color of the leaf to violet.\n#| code-fold: true\n#| code-summary: \"Show the code\"\n# Title Fall color\n# Credit: https://fronkonstin.com\n\n# Install packages\ninstall.packages(\"gsubfn\")\ninstall.packages(\"tidyverse\")\nlibrary(gsubfn)\nlibrary(tidyverse)\n\n# Define elements in plant art\n# Each image corresponds to a different axiom, rules, angle and depth\n\n# Leaf of Fall\n\naxiom=\"X\"\nrules=list(\"X\"=\"F-[[X]+X]+F[+FX]-X\", \"F\"=\"FF\")\nangle=22.5\ndepth=6\n\n\nfor (i in 1:depth) axiom=gsubfn(\".\", rules, axiom)\n\nactions=str_extract_all(axiom, \"\\\\d*\\\\+|\\\\d*\\\\-|F|L|R|\\\\[|\\\\]|\\\\|\") %&gt;% unlist\n\nstatus=data.frame(x=numeric(0), y=numeric(0), alfa=numeric(0))\npoints=data.frame(x1 = 0, y1 = 0, x2 = NA, y2 = NA, alfa=90, depth=1)\n\n\n# Generating data\n# Note: may take a minute or two\n\nfor (action in actions)\n{\n  if (action==\"F\")\n  {\n    x=points[1, \"x1\"]+cos(points[1, \"alfa\"]*(pi/180))\n    y=points[1, \"y1\"]+sin(points[1, \"alfa\"]*(pi/180))\n    points[1,\"x2\"]=x\n    points[1,\"y2\"]=y\n    data.frame(x1 = x, y1 = y, x2 = NA, y2 = NA,\n               alfa=points[1, \"alfa\"],\n               depth=points[1,\"depth\"]) %&gt;% rbind(points)-&gt;points\n  }\n  if (action %in% c(\"+\", \"-\")){\n    alfa=points[1, \"alfa\"]\n    points[1, \"alfa\"]=eval(parse(text=paste0(\"alfa\",action, angle)))\n  }\n  if(action==\"[\"){\n    data.frame(x=points[1, \"x1\"], y=points[1, \"y1\"], alfa=points[1, \"alfa\"]) %&gt;%\n      rbind(status) -&gt; status\n    points[1, \"depth\"]=points[1, \"depth\"]+1\n  }\n\n  if(action==\"]\"){\n    depth=points[1, \"depth\"]\n    points[-1,]-&gt;points\n    data.frame(x1=status[1, \"x\"], y1=status[1, \"y\"], x2=NA, y2=NA,\n               alfa=status[1, \"alfa\"],\n               depth=depth-1) %&gt;%\n      rbind(points) -&gt; points\n    status[-1,]-&gt;status\n  }\n}\n\nggplot() +\n  geom_segment(aes(x = x1, y = y1, xend = x2, yend = y2),\n               lineend = \"round\",\n               color=\"violet\", # Set your own Fall color?\n               data=na.omit(points)) +\n  coord_fixed(ratio = 1) +\n  theme_void() # No grid nor axes\n\n\n\n\n\n\n\nMy critique of a chart from a published work can be found by visiting my blog page on this website."
+  },
+  {
+    "objectID": "posts/2023-9-11 Chart Critique/index.html",
+    "href": "posts/2023-9-11 Chart Critique/index.html",
+    "title": "Critique of a Chart",
+    "section": "",
+    "text": "Up above, is a graph I found from Verizon’s 2023 Data Breach Investigative Report, which can be accessed at: https://www.verizon.com/business/resources/reports/dbir/2023/introduction/ It’s a graph that shows which types of data breaches have become more or less common over a span of six years from 2017-2023. The types of data breaches listed and categorized in the graph are “denial of service,” “privilege misuse,” “system intrusion,” “basic web application attacks,” “social engineering,” “lost and stolen assets,” “miscellaneous errors,” and “everything else.” There are some pros and cons I have discovered about this graph:\nPros\n\nIt looks at the fluctuations in the amount of a particular data breach over a span of months per year based on monthly averages instead of over a span of days or weeks in order to fit all the data into the small space that the graph covers.\nIt ensures that the viewer and reader of this graph is able to distinguish which line refers to a specific data breach category by matching them based on color.\n\nCons\n\nUsing colors is not necessarily the best way to separate the lines from each other and match a specific data breach category with a specific line. It cannot be assumed that everybody has normal color vision. There are too many cool colors, especially green, blue, and different hues of purple that make it hard for the eye to focus and differentiate the lines from each other. On the light spectrum, the human eye can see the colors green pretty well and the color red fairly well, but not the color blue. We have fewer cones in our eyes that pick up the color blue and, as a result, have to focus more on texts and details that are in the color blue or blended in with a blue background.\nThe text of the data breach category “basic web application attacks” is in a bright yellow color that can make it hard to see and read.\n\nThe best solution for presenting this graph is to either incorporate some more warmer and brighter colors to provide more contrast and differentiation between the colors to help the viewer and reader distinguish which line belongs to which data breach category. Or, create different types of lines such as dotted and broken lines, for example, which I recommend, instead of colored lines."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EPPS 6356 - Data Visualization",
+    "section": "",
+    "text": "Welcome! You have reached Grant Powell’s website for the data visualization course he is taking at the University of Texas at Dallas. To help give you an idea of what data visualization is, here are some resources to check out on data visualization down below.\nData visualization of baseball data:\n\nhttps://www.baseballdatascience.com/\nhttps://flowingdata.com/tag/baseball/\n\nData visualization of weather data:\n\nhttps://flowingdata.com/index.php?s=weather\nhttps://www.climate.gov/maps-data/climate-data-primer/visualizing-climate-data\n\nData visualization of data used to create generative art:\n\nhttps://www.visualcinnamon.com/art/\nhttps://flowingdata.com/tag/generative-art/"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Grant Powell is an Applied Cognition and Neuroscience Masters student pursuing the human computer interaction specialization at the University of Texas at Dallas. He is also a board-certified music therapist who strives to improve the functional skills and quality of life of clients with autism, hearing and visual impairments, physical disabilities, and intellectual and developmental disabilities. His interests include playing classical guitar and banjo, juggling, keeping up with baseball, and cooking, and spending time with his wife and his little Boston terrier."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\nUniversity of Texas, Dallas | Dallas, TX | MS in Applied Cognition and Neuroscience | Aug. 2020 - Dec. 2023\nAustin Peay State University | Clarksville, TN | BS in Music Performance | Aug. 2004 - May 2008"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Critique of a Chart\n\n\n\n\n\n\n\ndata visualization\n\n\ncybersecurity\n\n\n\n\n\n\n\n\n\n\n\nNov 9, 2023\n\n\nGrant Powell\n\n\n\n\n\n\n  \n\n\n\n\nReview of Tufte’s Future of Data Analysis Presentation\n\n\n\n\n\n\n\ndata analysis\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nGrant Powell\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "assignment2.html",
+    "href": "assignment2.html",
+    "title": "Assignment 2",
+    "section": "",
+    "text": "Paul Murrell’s RGraphics basic R programs:\n\n\n# Line graph plots points showing where and how the pressure \n# rises when the temperature rises from 0 to infinity. The pch # is the symbol-type of the plotted data-point.\nplot(pressure, pch=10)  \n# The placement of the text within the line graph describing \n# what the graph is showing. \ntext(150, 600, \"Pressure (mm Hg)\\nversus\\nTemperature (Celsius)\")"
+  }
+]
