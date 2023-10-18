@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Grant Powell">
+<meta name="dcterms.date" content="2023-09-20">
 
-<title>Grant Powell - Blog</title>
+<title>Grant Powell - Review of Tufte’s Future of Data Analysis Presentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,40 +61,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -104,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Grant Powell</span>
     </a>
   </div>
@@ -115,11 +84,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -128,25 +97,25 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-assignments">    
         <li>
-    <a class="dropdown-item" href="./assignment1.html" rel="" target="">
+    <a class="dropdown-item" href="../../assignment1.html" rel="" target="">
  <span class="dropdown-text">Assignment 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assignment2.html" rel="" target="">
+    <a class="dropdown-item" href="../../assignment2.html" rel="" target="">
  <span class="dropdown-text">Assignment 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assignment3.html" rel="" target="">
+    <a class="dropdown-item" href="../../assignment3.html" rel="" target="">
  <span class="dropdown-text">Assignment 3</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./project.html" rel="" target="">
+    <a class="nav-link" href="../../project.html" rel="" target="">
  <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -174,20 +143,36 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cybersecurity">cybersecurity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data analysis">data analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data visualization">data visualization <span class="quarto-category-count">(2)</span></div></div></div>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
-</div>
+<h1 class="title">Review of Tufte’s Future of Data Analysis Presentation</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">data analysis</div>
+    <div class="quarto-category">data visualization</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Grant Powell </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 20, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -195,93 +180,26 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p><img src="TuftePresentation.png" class="img-fluid"></p>
+<p>I watched a recorded video presentation by Dr.&nbsp;Edward Tufte from 2016 titled “The Future of Data Analysis.” It was a very insightful look into the changing landscape of the field of data analysis and data visualization. He provided some key findings of what all of us need and should strive for in the future in this field. Here are some notes and findings I highlighted from this presentation that I found very insightful:</p>
+<ul>
+<li><p>Most of us don’t think about this part of human history very much, but Gallileo, according to Dr.&nbsp;Tufte, was probably considered one of the greatest data thinking eyes to ever live. In his work of the Sidereus Nuncius, Gallileo illustrated the Pleiades cluster of stars in the sky that were visible, not with a telescope, but to the naked eye. Basically, it was a low-fidelity visualization of data points, the stars.</p></li>
+<li><p>Probably one of the most eye-opening and incredible data visualization graphics he showed was a graph showing the measles epidemic from a few decades back. It was split in half with the number of cases shown on the left without an available vaccine and the number of cases left after the vaccine. It was awe-inspiring the comparison being shown because there were hardly any data points for measles cases on the right side of the graph after a vaccine was provided. It showed the importance and power of vaccination. Here’s the graph:</p>
+<p><img src="images/zexxSW4-01.png" class="img-fluid"></p>
+<ul>
+<li>The reason the measles incidence rate graphic was mind-blowing is it showed a “smart” comparison. Dr.&nbsp;Tufte points out that what we all need to strive for in the field of data visualization is not to make conclusions and findings, but to make smart comparisons by providing a better way of looking at the evidence that plain words and texts on paper are not able to do.</li>
+</ul></li>
+<li><p>The only way to see big data is to see it. This ability in being able to see data has been greatly assisted by technological advances in screen-display quality of monitors. To clarify his point, he showed a map of the Swiss Alps that was put together to be seen on a screen-display and the contents were very clear and detailed. It was very easy on the eyes.</p></li>
+<li><p>The greatest benefit about having musical scores and music being visualized through interactive colors and shapes is that it helps people with no musical abilities to make sense of the music and understand it is by relating elements of the music being heard and seen with tangible, visual patterns.</p></li>
+<li><p>Maps like Google Maps need to have light background colors in to for us to see the details and information laid out before us. It provides contrast.</p></li>
+<li><p>Sometimes, it is best to capture everything in an instant replay video of a sports highlight or sequence of soccer plays, for example, on a one-page display in stop-action. It is a good way for one to learn and analyze another team’s performance, and strengths and weaknesses, if you are the athlete.</p></li>
+<li><p>It is important to have an open mind, but not an empty head when analyzing data. This is because we want to avoid bias. If we do not, then the problem of fake publications, false-positives, and false-alarms will be an issue in our findings and conclusions of the data. The responsibility of data analytics is to get it right. This is why, for example, when analyzing human behavior that it is harder to replicate replication studies on human behavior and, thus, makes the analysis of human behavior harder than rocket science.</p></li>
+</ul>
+<p>After sharing all these invaluable pieces of insight, Dr.&nbsp;Tufte concluded his presentation by pointing out that you can have you own point of view, but not your own facts. He points out that we need to muck around in our data to discover what we did not know. He advises us to take a look a look at the “Quartz Guide to Bad Data” and not fall victim to biases such as “survival bias” where as a famous saying goes “Castles are not all made of stone. They are also made of wood.”</p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="data analysis,data visualization" data-listing-date-sort="1695186000000" data-listing-file-modified-sort="1696397837826" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
-<div class="thumbnail">
-<p><a href="./posts/2023-20-9 The Future of Data Analysis Review/index.html"> <img src="./posts/2023-20-9 The Future of Data Analysis Review/TuftePresentation.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2023-20-9 The Future of Data Analysis Review/index.html">
-<h3 class="no-anchor listing-title">
-Review of Tufte’s Future of Data Analysis Presentation
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('data analysis'); return false;">
-data analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('data visualization'); return false;">
-data visualization
-</div>
-</div>
-<a href="./posts/2023-20-9 The Future of Data Analysis Review/index.html">
-<div class="listing-description">
-I watched a recorded video presentation by Dr.&nbsp;Edward Tufte from 2016 titled “The Future of Data Analysis.” It was a very insightful look into the changing landscape of the…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2023-20-9 The Future of Data Analysis Review/index.html">
-<div class="listing-date">
-Sep 20, 2023
-</div>
-<div class="listing-author">
-Grant Powell
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="data visualization,cybersecurity" data-listing-date-sort="1694408400000" data-listing-file-modified-sort="1696397865050" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/2023-11-9 A Chart Critique/index.html"> <img src="./posts/2023-11-9 A Chart Critique/figure-25.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2023-11-9 A Chart Critique/index.html">
-<h3 class="no-anchor listing-title">
-Critique of a Chart
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('data visualization'); return false;">
-data visualization
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cybersecurity'); return false;">
-cybersecurity
-</div>
-</div>
-<a href="./posts/2023-11-9 A Chart Critique/index.html">
-<div class="listing-description">
-Up above, is a graph I found from Verizon’s 2023 Data Breach Investigative Report, which can be accessed at: https:…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2023-11-9 A Chart Critique/index.html">
-<div class="listing-date">
-Sep 11, 2023
-</div>
-<div class="listing-author">
-Grant Powell
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
