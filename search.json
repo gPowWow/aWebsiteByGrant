@@ -74,7 +74,7 @@
     "href": "assignment5.html",
     "title": "Assignment 5",
     "section": "",
-    "text": "Below are a histogram, vertical and horizontal barcharts, a piechart, a boxplot, and a scatterplot graph that I created using R graphics functions.\nruns &lt;- X2023BravesWinsAndLosses$R\n\nbin_width &lt;- 1\n\nhist(x = runs, main = \"Number of Runs Scored in Games by the Braves in 2023\", xlab = \"Number of Runs\", ylab = \"Number of Games\", col = \"red\", border = \"black\", breaks = seq(min(runs), max(runs) + bin_width, by = bin_width))\n\ndata \n\nhome_runs2 &lt;- head(data$HR, 8)\n\nnames &lt;- c(\"Arizona Diamondbacks\", \"Atlanta Braves\", \"Baltimore Orioles\", \"Boston Red Sox\", \"Chicago Cubs\", \"Chicago White Sox\", \"Cincinnati Reds\", \"Cleveland Guardians\")\n\ncolors &lt;- rainbow(length(home_runs2))\n\npie(x = home_runs2, col = colors, labels = home_runs2)\n\ntitle(\"2023 Home Totals by Team\")\n\nlegend(\"topright\", legend = names, fill = colors, title = \"Teams\", cex = 0.8)\n\nBelow are a histogram, vertical and horizontal barcharts, a piechart, a boxplot, and a scatterplot graph that I created using ggplot2.\n# Import ggplot2\nlibrary(ggplot2)\n\n# Read and initialize data into an object\nbaseball &lt;- read.csv(\"/Users/thefinas1/documents/2023BattingAverages.csv\", \n                     nrows = 8)\n\n# Use the ggplot function to create a histogram\nggplot(baseball, aes(x = HR, fill = Tm, )) + geom_histogram(binwidth = 4) + \n  xlab(\"Total Home Runs for 2023\") + ylab(\"Number of Baseball Teams\") + \n  scale_y_continuous(breaks = c(0, 1, 2)) + labs(fill = \"Baseball Teams\") + \n  scale_x_continuous(breaks = seq(100, 350, by = 50))\n\n# Import ggplot2\nlibrary(ggplot2)\n\n# Read and initialize data into an object\nbaseball &lt;- read.csv(\"/Users/thefinas1/documents/2023BattingAverages.csv\", \n                     nrows = 8)\n\n# Use the ggplot function to create a scatterplot\nggplot(baseball, aes(x = Tm, y = HR)) + geom_point() + \n  xlab(\"Baseball Teams\") + ylab(\"Number of Home Runs\") + \n  theme(axis.text.x = element_text(angle = 45, hjust = 1))"
+    "text": "runs &lt;- X2023BravesWinsAndLosses$R\n\nbin_width &lt;- 1\n\nhist(x = runs, main = \"Number of Runs Scored in Games by the Braves in 2023\", xlab = \"Number of Runs\", ylab = \"Number of Games\", col = \"red\", border = \"black\", breaks = seq(min(runs), max(runs) + bin_width, by = bin_width))"
   },
   {
     "objectID": "posts/2023-20-9 The Future of Data Analysis Review/index.html",
@@ -117,5 +117,47 @@
     "title": "Assignment 6",
     "section": "",
     "text": "Shiny App User Interface of RStudio Datasets"
+  },
+  {
+    "objectID": "assignment5.html#histogram-with-r-graphics",
+    "href": "assignment5.html#histogram-with-r-graphics",
+    "title": "Assignment 5",
+    "section": "",
+    "text": "runs &lt;- X2023BravesWinsAndLosses$R\n\nbin_width &lt;- 1\n\nhist(x = runs, main = \"Number of Runs Scored in Games by the Braves in 2023\", xlab = \"Number of Runs\", ylab = \"Number of Games\", col = \"red\", border = \"black\", breaks = seq(min(runs), max(runs) + bin_width, by = bin_width))"
+  },
+  {
+    "objectID": "assignment5.html#bar-chart-with-r-graphics",
+    "href": "assignment5.html#bar-chart-with-r-graphics",
+    "title": "Assignment 5",
+    "section": "Bar Chart with R Graphics",
+    "text": "Bar Chart with R Graphics\nmonths &lt;- c(\"March\", \"April\", \"May\", \"June\", \"July\", \"August\", \"September\", \n           \"October\")\nwins &lt;- c(1, 17, 15, 21, 13, 21, 16, 0)\nlosses &lt;- c(0, 9, 14, 4, 10, 8, 12, 1)\nbarplot(matrix(c(wins, losses), nrow = 2, byrow = TRUE), beside = TRUE, \n        names.arg = months, main = \"Atlanta Brave's 2023 Monthly Wins\",  \n        xlab = \"Months\", ylab = \"Count\", ylim = c(0, 25), \n        col = c(\"navy\", \"red\"), legend.text = c(\"Wins\", \"Losses\"),las = 2)"
+  },
+  {
+    "objectID": "assignment5.html#pie-chart-with-r-graphics",
+    "href": "assignment5.html#pie-chart-with-r-graphics",
+    "title": "Assignment 5",
+    "section": "Pie Chart with R Graphics",
+    "text": "Pie Chart with R Graphics\ndata \n\nhome_runs2 &lt;- head(data$HR, 8)\n\nnames &lt;- c(\"Arizona Diamondbacks\", \"Atlanta Braves\", \"Baltimore Orioles\", \"Boston Red Sox\", \"Chicago Cubs\", \"Chicago White Sox\", \"Cincinnati Reds\", \"Cleveland Guardians\")\n\ncolors &lt;- rainbow(length(home_runs2))\n\npie(x = home_runs2, col = colors, labels = home_runs2)\n\ntitle(\"2023 Home Run Totals by Team\")\n\nlegend(\"topright\", legend = names, fill = colors, title = \"Teams\", cex = 0.8)"
+  },
+  {
+    "objectID": "assignment5.html#histograms-with-ggplot2",
+    "href": "assignment5.html#histograms-with-ggplot2",
+    "title": "Assignment 5",
+    "section": "Histograms with ggplot2",
+    "text": "Histograms with ggplot2\n# Import ggplot2\nlibrary(ggplot2)\n\n# Use the ggplot function to create a histogram\nggplot(X2023BravesWinsAndLosses, aes(x = R)) + geom_histogram(binwidth = 1, fill = \"red\", color = \"black\") + labs(x = \"Number of Runs\", y = \"Number of Games\", title = \"Number of Runs Scored in Games by the Braves in 2023\") + \nscale_y_continuous(breaks = seq(0, 25, by = 5)) + \nscale_x_continuous(breaks = seq(0, 25, by = 5))\n\n# Import ggplot2\nlibrary(ggplot2)\n\n# Read and initialize data into an object\nbaseball &lt;- read.csv(\"/Users/thefinas1/documents/2023BattingAverages.csv\", \n                     nrows = 8)\n\n# Use the ggplot function to create a histogram\nggplot(baseball, aes(x = HR, fill = Tm, )) + geom_histogram(binwidth = 4) + \n  xlab(\"Total Home Runs for 2023\") + ylab(\"Number of Baseball Teams\") + \n  scale_y_continuous(breaks = c(0, 1, 2)) + labs(fill = \"Baseball Teams\") + \n  scale_x_continuous(breaks = seq(100, 350, by = 50))"
+  },
+  {
+    "objectID": "assignment5.html#bar-chart-with-ggplot2",
+    "href": "assignment5.html#bar-chart-with-ggplot2",
+    "title": "Assignment 5",
+    "section": "Bar Chart with ggplot2",
+    "text": "Bar Chart with ggplot2\n# Create a data frame with the desired order of months\ndata &lt;- data.frame(\n  months = factor(c(\"March\", \"April\", \"May\", \"June\", \"July\", \"August\", \"September\", \"October\"),\n                  levels = c(\"March\", \"April\", \"May\", \"June\", \"July\", \"August\", \"September\", \"October\")),\n  losses = c(0, 9, 14, 4, 10, 8, 12, 1),\n  wins = c(1, 17, 15, 21, 13, 21, 16, 0)\n)\n\n# Now, create a bar chart using ggplot2\nlibrary(ggplot2)\n\nggplot(data, aes(x = months)) +\n  geom_bar(aes(y = wins, fill = \"Wins\"), stat = \"identity\", position = \"dodge\") +\n  geom_bar(aes(y = losses, fill = \"Losses\"), stat = \"identity\", position = \"dodge\") +\n  labs(title = \"Comparison of Wins and Losses by Month\",\n       x = \"Months\",\n       y = \"Count\") +\n  scale_fill_manual(values = c(\"Wins\" = \"blue\", \"Losses\" = \"red\")) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "assignment5.html#scatter-plot-with-ggplot2",
+    "href": "assignment5.html#scatter-plot-with-ggplot2",
+    "title": "Assignment 5",
+    "section": "Scatter Plot with ggplot2",
+    "text": "Scatter Plot with ggplot2\n# Import ggplot2\nlibrary(ggplot2)\n\n# Read and initialize data into an object\nbaseball &lt;- read.csv(\"/Users/thefinas1/documents/2023BattingAverages.csv\", \n                     nrows = 8)\n\n# Use the ggplot function to create a scatterplot\nggplot(baseball, aes(x = Tm, y = HR)) + geom_point() + \n  xlab(\"Baseball Teams\") + ylab(\"Number of Home Runs\") + \n  theme(axis.text.x = element_text(angle = 45, hjust = 1))"
   }
 ]
