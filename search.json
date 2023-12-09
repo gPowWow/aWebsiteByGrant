@@ -159,5 +159,96 @@
     "title": "Assignment 5",
     "section": "Scatter Plot with ggplot2",
     "text": "Scatter Plot with ggplot2\n# Import ggplot2\nlibrary(ggplot2)\n\n# Read and initialize data into an object\nbaseball &lt;- read.csv(\"/Users/thefinas1/documents/2023BattingAverages.csv\", \n                     nrows = 8)\n\n# Use the ggplot function to create a scatterplot\nggplot(baseball, aes(x = Tm, y = HR)) + geom_point() + \n  xlab(\"Baseball Teams\") + ylab(\"Number of Home Runs\") + \n  theme(axis.text.x = element_text(angle = 45, hjust = 1))"
+  },
+  {
+    "objectID": "assignment8.html",
+    "href": "assignment8.html",
+    "title": "Assignment 8",
+    "section": "",
+    "text": "Chart 1\n\nlacrime2020 &lt;- lacrime[2:148206, ]\nlacrime2020$Vict.Descent[lacrime2020$Vict.Descent == \"\"] &lt;- \"X\"\nlacrime2020$Vict.Descent[lacrime2020$Vict.Descent == \"C\"] &lt;- \"A\"\nlacrime2020$Vict.Descent[lacrime2020$Vict.Descent == \"F\"] &lt;- \"A\"\nlacrime2020$Vict.Descent[lacrime2020$Vict.Descent == \"J\"] &lt;- \"A\"\nlacrime2020$Vict.Descent[lacrime2020$Vict.Descent == \"K\"] &lt;- \"A\"\nlacrime2020$Vict.Descent[lacrime2020$Vict.Descent == \"V\"] &lt;- \"A\"\n\nfiltered_data &lt;- lacrime2020 %&gt;% filter(Vict.Descent == \"A\")\n\ndates_for_letter_A &lt;- filtered_data$DATE.OCC\n\nfiltered_data$DATE.OCC &lt;- as.Date(filtered_data$DATE.OCC)\n\nsummary_data &lt;- filtered_data %&gt;%\n  group_by(DATE.OCC) %&gt;%\n  summarize(Count = n())\n\nplot(summary_data$DATE.OCC, summary_data$Count, type = \"p\", pch = 1, cex = 0.4,\n     col = \"blue\", xlab = \"Date Occurred\", ylab = \"Number of Victims\", \n     main = \"Number of Asian Victims Daily in Los Angeles 2020\", mgp = c(3, 1, 0),\n     xaxt = \"n\", yaxt = \"n\")\naxis(1, at = seq(min(summary_data$DATE.OCC), max(summary_data$DATE.OCC), by = \"month\"), \n     labels = format(seq(min(summary_data$DATE.OCC), max(summary_data$DATE.OCC), by = \"month\"), \"%b %Y\"), cex.axis = 0.4)\naxis(2, las = 0, cex.axis = 0.4)\n\nlockdown_date &lt;- as.Date(\"2020-03-19\")\ntext(x = lockdown_date, y = max(summary_data$Count), labels = \"Lockdown 3/19\", pos = 1, offset = 1, cex = 0.4)\n\ntravel_ban &lt;- as.Date(\"2020-01-31\")\ntext(x = travel_ban, y = 39, labels = \"Travel Ban 1/31\", pos = 1, offset = 1, cex = 0.4)\n\nmodel &lt;- lm(summary_data$Count ~ as.numeric(summary_data$DATE.OCC))\nabline(model, col = \"red\")\n\n\n\n\n\n\nChart 2\n\nlacrime2021 &lt;- lacrime[148207:303895, ]\nlacrime2021$Vict.Descent[lacrime2021$Vict.Descent == \"\"] &lt;- \"X\"\nlacrime2021$Vict.Descent[lacrime2021$Vict.Descent == \"C\"] &lt;- \"A\"\nlacrime2021$Vict.Descent[lacrime2021$Vict.Descent == \"F\"] &lt;- \"A\"\nlacrime2021$Vict.Descent[lacrime2021$Vict.Descent == \"J\"] &lt;- \"A\"\nlacrime2021$Vict.Descent[lacrime2021$Vict.Descent == \"K\"] &lt;- \"A\"\nlacrime2021$Vict.Descent[lacrime2021$Vict.Descent == \"V\"] &lt;- \"A\"\n\n# Filter the rows with \"A\" in the Vict.Descent column\nfiltered_data_2 &lt;- lacrime2021 %&gt;% filter(Vict.Descent == \"A\")\n\n# Extract the dates from the filtered data\ndates_for_letter_A_2 &lt;- filtered_data$DATE.OCC\n\n# Make sure the \"Date Occurred\" column is in the date format\nfiltered_data_2$DATE.OCC &lt;- as.Date(filtered_data_2$DATE.OCC)\n\nsummary_data_2 &lt;- filtered_data_2 %&gt;%\n  group_by(DATE.OCC) %&gt;%\n  summarize(Count = n())\n\n# Create a time-series scatterplot\nplot(summary_data_2$DATE.OCC, summary_data_2$Count, type = \"p\", pch = 1, cex = 0.4,\n     col = \"blue\", xlab = \"Date Occurred\", ylab = \"Number of Victims\", \n     main = \"Number of Asian Victims Daily in Los Angeles 2021\", mgp = c(3, 1, 0),\n     xaxt = \"n\", yaxt = \"n\")\naxis(1, at = seq(min(summary_data_2$DATE.OCC), max(summary_data_2$DATE.OCC), by = \"month\"), \n     labels = format(seq(min(summary_data_2$DATE.OCC), max(summary_data_2$DATE.OCC), by = \"month\"), \"%b %Y\"), cex.axis = 0.4)\naxis(2, las = 0, cex.axis = 0.4)\n\n\n\n\n\n\nChart 3\n\nlacrime2022 &lt;- lacrime[303896:404565, ]\nlacrime2022$Vict.Descent[lacrime2022$Vict.Descent == \"\"] &lt;- \"X\"\nlacrime2022$Vict.Descent[lacrime2022$Vict.Descent == \"C\"] &lt;- \"A\"\nlacrime2022$Vict.Descent[lacrime2022$Vict.Descent == \"F\"] &lt;- \"A\"\nlacrime2022$Vict.Descent[lacrime2022$Vict.Descent == \"J\"] &lt;- \"A\"\nlacrime2022$Vict.Descent[lacrime2022$Vict.Descent == \"K\"] &lt;- \"A\"\nlacrime2022$Vict.Descent[lacrime2022$Vict.Descent == \"V\"] &lt;- \"A\"\n\nfiltered_data_3 &lt;- lacrime2022 %&gt;% filter(Vict.Descent == \"A\")\n\nfiltered_data_3$DATE.OCC &lt;- as.Date(filtered_data_3$DATE.OCC)\n\nfiltered_data_3 &lt;- filtered_data_3[order(filtered_data_3$DATE.OCC), ]\n\nsummary_data_3 &lt;- filtered_data_3 %&gt;%\n  group_by(DATE.OCC) %&gt;%\n  summarize(Count = n())\n\n# Create a time-series scatterplot with no x-axis labels\nplot(summary_data_3$DATE.OCC, summary_data_3$Count, type = \"p\", pch = 1, cex = 0.4,\n     col = \"blue\", xlab = \"Date Occurred\", ylab = \"Number of Victims\", \n     main = \"Number of Asian Victims Daily in Los Angeles 2022\", mgp = c(3, 1, 0), \n     xaxt = \"n\", yaxt = \"n\")\naxis(1, at = seq(min(summary_data_3$DATE.OCC), max(summary_data_3$DATE.OCC), by = \"month\"), \n     labels = format(seq(min(summary_data_3$DATE.OCC), max(summary_data_3$DATE.OCC), by = \"month\"), \"%b %Y\"), cex.axis = 0.6)\naxis(2, las = 0, cex.axis = 0.6)"
+  },
+  {
+    "objectID": "assignment9.html",
+    "href": "assignment9.html",
+    "title": "Assignment 9",
+    "section": "",
+    "text": "library(TSstudio)\nquantmod::getSymbols(\"BATRA\", src=\"yahoo\")\nclass(BATRA)\nts_plot(BATRA$BATRA.Adjusted, \n        title = \"Atlanta Braves Stock Prices\",\n        Ytitle = \"\")\nclass(BATRA) # What class is this object? It is an xts and zoo class.\n\nApart from the huge dip near 2020, the graph looks more like it has a progressive, upward trend that is increasing over time with some small-level spikes and dips along the way. The BATRA class is an “xts” and “zoo” class."
+  },
+  {
+    "objectID": "assignment9.html#time-series-chart-of-the-stock-for-the-atlanta-braves-baseball-team-using-tsstudio01.r",
+    "href": "assignment9.html#time-series-chart-of-the-stock-for-the-atlanta-braves-baseball-team-using-tsstudio01.r",
+    "title": "Assignment 9",
+    "section": "",
+    "text": "library(TSstudio)\nquantmod::getSymbols(\"BATRA\", src=\"yahoo\")\nclass(BATRA)\nts_plot(BATRA$BATRA.Adjusted, \n        title = \"Atlanta Braves Stock Prices\",\n        Ytitle = \"\")\nclass(BATRA) # What class is this object? It is an xts and zoo class.\n\nApart from the huge dip near 2020, the graph looks more like it has a progressive, upward trend that is increasing over time with some small-level spikes and dips along the way. The BATRA class is an “xts” and “zoo” class."
+  },
+  {
+    "objectID": "assignment9.html#time-series-chart-of-ukgas-dataset-using-tsstudio01.r",
+    "href": "assignment9.html#time-series-chart-of-ukgas-dataset-using-tsstudio01.r",
+    "title": "Assignment 9",
+    "section": "Time-Series Chart of UKgas Dataset Using tsstudio01.R",
+    "text": "Time-Series Chart of UKgas Dataset Using tsstudio01.R\nlibrary(TSstudio)\nquantmod::getSymbols(\"BATRA\", src=\"yahoo\")\nclass(BATRA)\nts_plot(BATRA$BATRA.Adjusted, \n        title = \"Atlanta Braves Stock Prices\",\n        Ytitle = \"\")\nclass(BATRA) # What class is this object? It is an xts and zoo class.\n\n# Some sample dataset from TSstudio\nts_seasonal(UKgas, type = \"\") # month-year matrix data\n\n# What class is USgas? It is a ts class. I'm guessing ts equals time series?\n\n# Sample charts\nts_heatmap(UKgas)\nts_cor(UKgas) # ACF and PACF\nts_lags(UKgas, margin = .02)\nUKgas=data.frame(UKgas)\n\nThe data set “USgas” was replaced with “UKgas.” It shows faceting chart or grid commonly found in ggplot and the data set “USgas” and “UKgas” is of the class “ts.”"
+  },
+  {
+    "objectID": "assignment4.html#chart-1-variable-width-column-chart-attempt-by-team-member-yichao-jin-from-chart-suggestions---a-thought-starter",
+    "href": "assignment4.html#chart-1-variable-width-column-chart-attempt-by-team-member-yichao-jin-from-chart-suggestions---a-thought-starter",
+    "title": "Assignment 4",
+    "section": "Chart #1 Variable Width Column Chart Attempt by Team Member Yichao Jin from “Chart Suggestions - A Thought Starter”",
+    "text": "Chart #1 Variable Width Column Chart Attempt by Team Member Yichao Jin from “Chart Suggestions - A Thought Starter”\n\n# Sample data frame\ndata &lt;- data.frame(Item = c(\"Item1\", \"Item2\", \"Item3\"),\nVariable1 = c(10, 15, 20),\nVariable2 = c(5, 8, 12))\n\n# Load the ggplot2 library\nlibrary(ggplot2)\n\n# Reshape the data from wide to long format using tidyr\nlibrary(tidyr)\ndata_long &lt;- pivot_longer(data, cols = starts_with(\"Variable\"),\nnames_to = \"Variable\",\nvalues_to = \"Value\")\n\n# Create the grouped bar chart\nggplot(data_long, aes(x = Item, y = Value, fill = Variable)) +\ngeom_bar(stat = \"identity\", position = position_dodge(width = 0.9)) +\nlabs(title = \"Comparison of Variables for Three Items\",\nx = \"Items\",\ny = \"Value\") +\ntheme_minimal()"
+  },
+  {
+    "objectID": "assignment4.html#chart-2-table-or-table-with-embedded-charts-from-chart-suggestions---a-thought-starter",
+    "href": "assignment4.html#chart-2-table-or-table-with-embedded-charts-from-chart-suggestions---a-thought-starter",
+    "title": "Assignment 4",
+    "section": "Chart #2 Table or Table with Embedded Charts from “Chart Suggestions - A Thought Starter”",
+    "text": "Chart #2 Table or Table with Embedded Charts from “Chart Suggestions - A Thought Starter”\n(Coming soon…)"
+  },
+  {
+    "objectID": "assignment4.html#chart-3-bar-chart-attempt-by-team-member-yichao-jin-from-chart-suggestions---a-thought-starter",
+    "href": "assignment4.html#chart-3-bar-chart-attempt-by-team-member-yichao-jin-from-chart-suggestions---a-thought-starter",
+    "title": "Assignment 4",
+    "section": "Chart #3 Bar Chart Attempt by Team Member Yichao Jin from “Chart Suggestions - A Thought Starter”",
+    "text": "Chart #3 Bar Chart Attempt by Team Member Yichao Jin from “Chart Suggestions - A Thought Starter”\n\n# Sample data frame\ndata &lt;- data.frame(Item = c(\"Item1\", \"Item2\", \"Item3\", \"Item4\",\"Item5\",\"item6\",\"item7\",\"item8\"),\nValue1 = c(30, 45, 25, 60, 35,40,31,37),\nValue2 = c(20, 40, 50, 30, 45,21,65,35))\n\n# Load the ggplot2 library\nlibrary(ggplot2)\n\n# Create the first horizontal bar chart\nchart1 &lt;- ggplot(data, aes(x = Value1, y = Item, fill = Item)) +\ngeom_bar(stat = \"identity\", orientation = \"y\") +\nlabs(title = \"\", x = \"Value\", y = \"Item\") +\ntheme_minimal() +\ntheme(axis.text.y = element_text(hjust = 1)) # Right-align item labels\n\n# Create the second horizontal bar chart\nchart2 &lt;- ggplot(data, aes(x = Value2, y = Item, fill = Item)) +\ngeom_bar(stat = \"identity\", orientation = \"y\") +\nlabs(title = \"\", x = \"Value\", y = \"Item\") +\ntheme_minimal() +\ntheme(axis.text.y = element_text(hjust = 1)) # Right-align item labels\n\n# Display the charts side by side\nlibrary(gridExtra)\n\ngrid.arrange(chart1, chart2, ncol = 2)"
+  },
+  {
+    "objectID": "assignment4.html#chart-4-column-chart-from-chart-suggestions---a-thought-starter",
+    "href": "assignment4.html#chart-4-column-chart-from-chart-suggestions---a-thought-starter",
+    "title": "Assignment 4",
+    "section": "Chart #4 Column Chart from “Chart Suggestions - A Thought Starter”",
+    "text": "Chart #4 Column Chart from “Chart Suggestions - A Thought Starter”\n(Coming soon…)"
+  },
+  {
+    "objectID": "assignment6.html#shiny-app-link-with-major-league-baseball-datasets-from-the-sports-reference-website",
+    "href": "assignment6.html#shiny-app-link-with-major-league-baseball-datasets-from-the-sports-reference-website",
+    "title": "Assignment 6",
+    "section": "Shiny App Link with Major League Baseball Datasets from the Sports Reference Website",
+    "text": "Shiny App Link with Major League Baseball Datasets from the Sports Reference Website\nShiny App User Interface of Grant’s Baseball Datasets"
+  },
+  {
+    "objectID": "assignment7.html#examples-of-chart-9-scatter-chart-and-18-bubble-chart-from-chart-suggestions---a-thought-starter",
+    "href": "assignment7.html#examples-of-chart-9-scatter-chart-and-18-bubble-chart-from-chart-suggestions---a-thought-starter",
+    "title": "Assignment 7",
+    "section": "Examples of Chart #9 Scatter Chart and #18 Bubble Chart from “Chart Suggestions - A Thought Starter”",
+    "text": "Examples of Chart #9 Scatter Chart and #18 Bubble Chart from “Chart Suggestions - A Thought Starter”\n# Sample data\nx &lt;- X2023BattingAverages$BA\ny &lt;- X2023BattingAverages$PA\n\n# Create a scatter chart\nplot(x, y, main = \"Batting Average vs. Plate Appearances of 2023 MLB Teams\", xlab = \"Batting Average\", ylab = \"Plate Appearances\", ylim = c(5000, 7000), col = \"blue\", pch = 1\n)"
+  },
+  {
+    "objectID": "assignment7.html#example-of-chart-9-scatter-chart-and-chart-18-bubble-chart-from-chart-suggestions---a-thought-starter",
+    "href": "assignment7.html#example-of-chart-9-scatter-chart-and-chart-18-bubble-chart-from-chart-suggestions---a-thought-starter",
+    "title": "Assignment 7",
+    "section": "Example of Chart #9 Scatter Chart and Chart #18 Bubble Chart from “Chart Suggestions - A Thought Starter”",
+    "text": "Example of Chart #9 Scatter Chart and Chart #18 Bubble Chart from “Chart Suggestions - A Thought Starter”\n\nFrom my Group Member, Tayaba Saleem:\n\n\nhttps://tayabasaleem123.shinyapps.io/Teamsprojectshinyapp/"
+  },
+  {
+    "objectID": "assignment10.html",
+    "href": "assignment10.html",
+    "title": "Assignment 10",
+    "section": "",
+    "text": "https://gpowwow.shinyapps.io/mapp/"
+  },
+  {
+    "objectID": "assignment10.html#a-map-of-my-location",
+    "href": "assignment10.html#a-map-of-my-location",
+    "title": "Assignment 10",
+    "section": "",
+    "text": "https://gpowwow.shinyapps.io/mapp/"
   }
 ]
