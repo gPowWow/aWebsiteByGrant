@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Grant Powell - Text Captioning and Speech Perception</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Grant Powell</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data-visualization" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Data Visualization</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-data-visualization">    
+        <li>
+    <a class="dropdown-item" href="./assignment1.html" rel="" target="">
+ <span class="dropdown-text">Assignment 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assignment2.html" rel="" target="">
+ <span class="dropdown-text">Assignment 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assignment3.html" rel="" target="">
+ <span class="dropdown-text">Assignment 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assignment4.html" rel="" target="">
+ <span class="dropdown-text">Assignment 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assignment5.html" rel="" target="">
+ <span class="dropdown-text">Assignment 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assignment6.html" rel="" target="">
+ <span class="dropdown-text">Assignment 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assignment7.html" rel="" target="">
+ <span class="dropdown-text">Assignment 7</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assignment8.html" rel="" target="">
+ <span class="dropdown-text">Assignment 8</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assignment9.html" rel="" target="">
+ <span class="dropdown-text">Assignment 9</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./assignment10.html" rel="" target="">
+ <span class="dropdown-text">Assignment 10</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./project.html" rel="" target="">
+ <span class="dropdown-text">Project</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ux-design" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">UX Design</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ux-design">    
+        <li>
+    <a class="dropdown-item" href="./hotel_website_redesign.html" rel="" target="">
+ <span class="dropdown-text">Hotel Website Redesign</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./easy_internet_app.html" rel="" target="">
+ <span class="dropdown-text">Easy Internet App</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ride_saver_app.html" rel="" target="">
+ <span class="dropdown-text">RideSaver App</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-accessibility" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Accessibility</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-accessibility">    
+        <li>
+    <a class="dropdown-item" href="./closed_caption_1.html" rel="" target="">
+ <span class="dropdown-text">HCI 1 Research</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./presentation_1.html" rel="" target="">
+ <span class="dropdown-text">Text Captioning and Speech Perception</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./clear_speech.html" rel="" target="">
+ <span class="dropdown-text">Clear Speech</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./presentation_2.html" rel="" target="">
+ <span class="dropdown-text">Cochlear Implants and Speech Perception</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./closed_caption_2.html" rel="" target="">
+ <span class="dropdown-text">Speech Perception Research</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./perception_proposal.html" rel="" target="">
+ <span class="dropdown-text">Perception Research Proposal</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cybersecurity" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Cybersecurity</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-cybersecurity">    
+        <li>
+    <a class="dropdown-item" href="./policy_paper.html" rel="" target="">
+ <span class="dropdown-text">Policy Paper on Oversharing</span></a>
+  </li>  
+        <li class="dropdown-header">cognitive_social_biases.qmd</li>
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./posts.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/grant-powell-08703237" rel="" target=""><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#presentation-summary-of-text-captioning-buffers-against-the-effects-of-background-noise-and-hearing-loss-on-memory-for-speech" id="toc-presentation-summary-of-text-captioning-buffers-against-the-effects-of-background-noise-and-hearing-loss-on-memory-for-speech" class="nav-link active" data-scroll-target="#presentation-summary-of-text-captioning-buffers-against-the-effects-of-background-noise-and-hearing-loss-on-memory-for-speech">Presentation Summary of “Text Captioning Buffers Against the Effects of Background Noise and Hearing Loss on Memory for Speech”</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Text Captioning and Speech Perception</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<iframe src="https://1drv.ms/p/c/db1e0516f0b030ec/IQPsMLDwFgUeIIDbuxsAAAAAAd2lqP-jgfiSNckJF68V5uA?em=2&amp;wdAr=1.7777777777777777" width="800px" height="300px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+<section id="presentation-summary-of-text-captioning-buffers-against-the-effects-of-background-noise-and-hearing-loss-on-memory-for-speech" class="level2">
+<h2 class="anchored" data-anchor-id="presentation-summary-of-text-captioning-buffers-against-the-effects-of-background-noise-and-hearing-loss-on-memory-for-speech">Presentation Summary of “Text Captioning Buffers Against the Effects of Background Noise and Hearing Loss on Memory for Speech”</h2>
+<p>The research article titled “Text Captioning Buffers Against the Effects of Background Noise and Hearing Loss on Memory for Speech” by Brennan R. Payne, Jack W. Silcox, Hannah A. Crandell, Amanda Lash, Sarah Hargus Ferguson, and Monika Lohani tested the following research hypothesis: “The presentation of realistic, assistive text-captioned speech will help offset the effects of background noise and hearing impairment on measures of speech memory involving immediate recall and delayed recognition memory accuracy, and delayed recognition confidence.” There were two sets of independent variables. The first set were the captioning variables involving “without text-captioning” and “with text-captioning.” The second set were the noise level variables involving “quietness,” “speech-to-noise ratio (SNR) of +7 dB,” and “SNR of +3 dB.” By putting those sets of independent variables together, the research design became a 2 x 3 factorial within-subjects design, which is 2 (caption vs.&nbsp;no caption) x 3 (no noise vs.&nbsp;+7 dB SNR vs.&nbsp;+3 dB SNR). The dependent variables, also the measured variables, were “immediate speech recall accuracy,” “delayed sentence recognition memory accuracy,” and “sentence recognition confidence.” There was a rationale for why the researchers tested these independent and dependent variables.</p>
+<p>One of the reasons they tested these variables is because sensorineural hearing loss is increasingly becoming more common amongst the public. It has become the third most prevalent chronic medical condition in older adults. This type of hearing loss makes it difficult to understand speech and it affects speech comprehension and memory when conversing and listening. The second reason they tested these variables is because this type of hearing loss within a noisy environment can add an additional cognitive load by affecting successful memory encoding. A good way to empathize with people with hearing loss who have trouble with memory encoding of speech in noisy environments is to consider a study by P. M. Rabbitt titled “Channel-capacity, Intelligibility and Immediate Recall” from 1968.</p>
+<p>Rabbitt presented the first part of a word list of spoken digits to young adult listeners who had no hearing loss without background noise. Then introduced background noise upon presenting the second part of the word list. After the presentation was done, memory recall for the first part of the word list was poorer than memory recall for the second part of the word list. This showed that, despite distorted speech affecting speech understanding of the second part of the word list and undistorted speech not affecting speech understanding of the first part of the word list, the noise interfered with the cognitive processes required for successful memory encoding of the first part of the word list. In other words, while the first part of the word list was hanging around in a person’s short-term memory ready to be stored in the working memory store of that person’s short-term memory for later consolidation into long-term memory, the person was distracted by trying hard to understand the second part of the word list, to the point, that opportunities to encode the first part of the word list were lost. While this shows the difficulty people with hearing loss have in noisy environments, there was another helpful solution in the research literature that showed some benefit in dealing with noise that also served as a fourth reason for testing the variables in the research study on text-captioning.</p>
+<p>It has been found in the research literature that speechreading, also known as lip-reading, has helped improve speech comprehension in a noisy environment. Orthographic cues from speechreading simultaneously presented with text was found to provide a secondary direct channel for word recognition. In other words, if an assistive visual representation like speechreading can help people, then how much or how much more could text-captioning benefit in resolving difficulties with speech understanding? This also goes with the need to help expand the research literature on this subject, which is the fifth reason for testing the variables in the research study.</p>
+<p>Expanding a limited research literature on text-captioning can help provide a better understanding of the cognitive mechanisms of the benefits of text-captioning. For example, the researchers of the text-captioning article state, “Text cues may modulate the perception of degraded speech” but “it is less clear what downstream benefits this improved clarity has on adults’ subsequent speech memory.” Finally, expanding the research literature on text-captioning can help validate and confirm the ecological validity of studies that were shown to have a generalizable, real-world application such as a study titled “Real-time Captioning for Improving Informed Consent: Patient and Physician Benefits” where real-time text-captioning was found to help patients retain more information during simulated informed consent. Now, let’s look at how the main research study on text-captioning was conducted.</p>
+<p>It was split into two experiments where the research hypothesis was tested on young adult listeners without hearing loss in the first experiment and a “cohort of older adults with a wide range of hearing acuity in the second experiment.” A sample size of forty-eight young adults participated in the first experiment, except, two subjects had to be excluded for further analysis because they did not complete the entire protocol. A sample size of thirty-one older adults participated in the second experiment. However, due to their wide age range from 61 to 80 years of age, variation in hearing loss and acuity levels, and inconsistent, nontransparent reporting of overall hearing ability, a hearing assessment, vision screening, cognitive assessment, and auditory control task had to be conducted.</p>
+<p>It was found that all the subjects of older adults had on average slight hearing loss of 16-25 dB to mild hearing loss of 26-40 dB. None of them showed any signs of dementia or Alzheimer’s. All of them were found to be able to see the captions well enough without any difficulty. And they showed the ability to understand speech clearly enough at a certain threshold in the noise environments, which were the noise environments with an SNR of +3 dB and +7 dB. Despite having different types of subjects, both experiments were conducted in the same manner. Ninety propositionally dense sentences each containing eighteen words in length covering diverse topics in science, nature, and history were presented. They were presented in two blocks of forty-five sentences with one block presented without text-captioning and the other one with text-captioning. Both blocks were presented in the three noise environments of no noise and the two SNR levels of +7 and +3 dB. Data was collected for immediate speech recall by having the subjects verbalize aloud as much of a sentence they remembered 5,000ms (i.e., 5 seconds) after the whole sentence disappeared from the screen 1,000ms (i.e., 1 second) after the offset of the final word of the sentence. Then for delayed recognition memory recall, they were instructed to indicate whether they heard a particular sentence from a set of forty-two sentences after each block of forty-five sentences was administered. Finally, for recognition memory confidence they were to rate their confidence in their response on a Likert scale of 1 to 5 (i.e., 1 = no confidence and 5 = complete confidence). The data collected led to the discovery of certain findings.</p>
+<p>Based on the statistical data there were significant main effects of only “Caption” and of “Caption” and “Noise,” and significant interactions of “Caption” x “Noise” from the data collected in both experiments for immediate speech recall, delayed recognition memory recall, and memory recognition confidence. Moreover, there were statistically significant interactions between “Caption” x “Noise” x “Hearing Level,” “Noise” x “Hearing Level,” and “Caption” x “Hearing Level” in experiment two. Based on these findings, the researchers concluded, “Text captions improved not only immediate recall, but also long-term memory outcomes in younger and older adults [in both experiments] and [reduced] both the effects of increased background noise [in both experiments] and hearing loss [in experiment one].” While the benefits from captions was greatest for older adults with hearing loss, it also provides broad benefits to literate adult listeners with or without hearing loss. Despite the positive findings, the exact reason for why text captions yield improvements in speech memory cannot be gleaned from the results.</p>
+<p>To conclude, future research could examine how text and speech information is utilized in real-time during encoding of text and speech through electroencephalography, EEG, or eye-tracking. Other future research could investigate the role intermodal asynchrony plays on the benefits provided by text captions and also test subjects with severe-to-profound hearing loss involving young and older subjects.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
