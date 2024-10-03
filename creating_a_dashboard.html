@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Grant Powell - Presentation Summary on Text Captioning, Background Noise, Hearing Loss, and Speech Memory</title>
+<title>Grant Powell - A Dashboard</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -240,7 +274,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#chart-1" id="toc-chart-1" class="nav-link active" data-scroll-target="#chart-1">Chart 1</a></li>
+  <li><a href="#chart-2" id="toc-chart-2" class="nav-link" data-scroll-target="#chart-2">Chart 2</a></li>
+  <li><a href="#chart-3" id="toc-chart-3" class="nav-link" data-scroll-target="#chart-3">Chart 3</a></li>
   </ul>
 </nav>
     </div>
@@ -249,7 +285,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Presentation Summary on Text Captioning, Background Noise, Hearing Loss, and Speech Memory</h1>
+<h1 class="title">A Dashboard</h1>
 </div>
 
 
@@ -266,19 +302,131 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<iframe src="https://1drv.ms/p/c/db1e0516f0b030ec/IQPsMLDwFgUeIIDbuxsAAAAAAd2lqP-jgfiSNckJF68V5uA?em=2&amp;wdAr=1.7777777777777777" width="800px" height="300px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
-<section id="summary" class="level1">
-<h1>Summary</h1>
+<section id="chart-1" class="level3">
+<h3 class="anchored" data-anchor-id="chart-1">Chart 1</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>lacrime2020 <span class="ot">&lt;-</span> lacrime[<span class="dv">2</span><span class="sc">:</span><span class="dv">148206</span>, ]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>lacrime2020<span class="sc">$</span>Vict.Descent[lacrime2020<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">""</span>] <span class="ot">&lt;-</span> <span class="st">"X"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>lacrime2020<span class="sc">$</span>Vict.Descent[lacrime2020<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"C"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>lacrime2020<span class="sc">$</span>Vict.Descent[lacrime2020<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"F"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>lacrime2020<span class="sc">$</span>Vict.Descent[lacrime2020<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"J"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>lacrime2020<span class="sc">$</span>Vict.Descent[lacrime2020<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"K"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>lacrime2020<span class="sc">$</span>Vict.Descent[lacrime2020<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"V"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>filtered_data <span class="ot">&lt;-</span> lacrime2020 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Vict.Descent <span class="sc">==</span> <span class="st">"A"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>dates_for_letter_A <span class="ot">&lt;-</span> filtered_data<span class="sc">$</span>DATE.OCC</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>filtered_data<span class="sc">$</span>DATE.OCC <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(filtered_data<span class="sc">$</span>DATE.OCC)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> filtered_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(DATE.OCC) <span class="sc">%&gt;%</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Count =</span> <span class="fu">n</span>())</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(summary_data<span class="sc">$</span>DATE.OCC, summary_data<span class="sc">$</span>Count, <span class="at">type =</span> <span class="st">"p"</span>, <span class="at">pch =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.4</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">xlab =</span> <span class="st">"Date Occurred"</span>, <span class="at">ylab =</span> <span class="st">"Number of Victims"</span>, </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Number of Asian Victims Daily in Los Angeles 2020"</span>, <span class="at">mgp =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>     <span class="at">xaxt =</span> <span class="st">"n"</span>, <span class="at">yaxt =</span> <span class="st">"n"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at =</span> <span class="fu">seq</span>(<span class="fu">min</span>(summary_data<span class="sc">$</span>DATE.OCC), <span class="fu">max</span>(summary_data<span class="sc">$</span>DATE.OCC), <span class="at">by =</span> <span class="st">"month"</span>), </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>     <span class="at">labels =</span> <span class="fu">format</span>(<span class="fu">seq</span>(<span class="fu">min</span>(summary_data<span class="sc">$</span>DATE.OCC), <span class="fu">max</span>(summary_data<span class="sc">$</span>DATE.OCC), <span class="at">by =</span> <span class="st">"month"</span>), <span class="st">"%b %Y"</span>), <span class="at">cex.axis =</span> <span class="fl">0.4</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>, <span class="at">las =</span> <span class="dv">0</span>, <span class="at">cex.axis =</span> <span class="fl">0.4</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>lockdown_date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2020-03-19"</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x =</span> lockdown_date, <span class="at">y =</span> <span class="fu">max</span>(summary_data<span class="sc">$</span>Count), <span class="at">labels =</span> <span class="st">"Lockdown 3/19"</span>, <span class="at">pos =</span> <span class="dv">1</span>, <span class="at">offset =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.4</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>travel_ban <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2020-01-31"</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x =</span> travel_ban, <span class="at">y =</span> <span class="dv">39</span>, <span class="at">labels =</span> <span class="st">"Travel Ban 1/31"</span>, <span class="at">pos =</span> <span class="dv">1</span>, <span class="at">offset =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.4</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(summary_data<span class="sc">$</span>Count <span class="sc">~</span> <span class="fu">as.numeric</span>(summary_data<span class="sc">$</span>DATE.OCC))</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(model, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="creating_a_dashboard_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="chart-2" class="level3">
+<h3 class="anchored" data-anchor-id="chart-2">Chart 2</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lacrime2021 <span class="ot">&lt;-</span> lacrime[<span class="dv">148207</span><span class="sc">:</span><span class="dv">303895</span>, ]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>lacrime2021<span class="sc">$</span>Vict.Descent[lacrime2021<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">""</span>] <span class="ot">&lt;-</span> <span class="st">"X"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>lacrime2021<span class="sc">$</span>Vict.Descent[lacrime2021<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"C"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>lacrime2021<span class="sc">$</span>Vict.Descent[lacrime2021<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"F"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>lacrime2021<span class="sc">$</span>Vict.Descent[lacrime2021<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"J"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>lacrime2021<span class="sc">$</span>Vict.Descent[lacrime2021<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"K"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>lacrime2021<span class="sc">$</span>Vict.Descent[lacrime2021<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"V"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the rows with "A" in the Vict.Descent column</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>filtered_data_2 <span class="ot">&lt;-</span> lacrime2021 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Vict.Descent <span class="sc">==</span> <span class="st">"A"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the dates from the filtered data</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>dates_for_letter_A_2 <span class="ot">&lt;-</span> filtered_data<span class="sc">$</span>DATE.OCC</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Make sure the "Date Occurred" column is in the date format</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>filtered_data_2<span class="sc">$</span>DATE.OCC <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(filtered_data_2<span class="sc">$</span>DATE.OCC)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>summary_data_2 <span class="ot">&lt;-</span> filtered_data_2 <span class="sc">%&gt;%</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(DATE.OCC) <span class="sc">%&gt;%</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Count =</span> <span class="fu">n</span>())</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a time-series scatterplot</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(summary_data_2<span class="sc">$</span>DATE.OCC, summary_data_2<span class="sc">$</span>Count, <span class="at">type =</span> <span class="st">"p"</span>, <span class="at">pch =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.4</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">xlab =</span> <span class="st">"Date Occurred"</span>, <span class="at">ylab =</span> <span class="st">"Number of Victims"</span>, </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Number of Asian Victims Daily in Los Angeles 2021"</span>, <span class="at">mgp =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>     <span class="at">xaxt =</span> <span class="st">"n"</span>, <span class="at">yaxt =</span> <span class="st">"n"</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at =</span> <span class="fu">seq</span>(<span class="fu">min</span>(summary_data_2<span class="sc">$</span>DATE.OCC), <span class="fu">max</span>(summary_data_2<span class="sc">$</span>DATE.OCC), <span class="at">by =</span> <span class="st">"month"</span>), </span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>     <span class="at">labels =</span> <span class="fu">format</span>(<span class="fu">seq</span>(<span class="fu">min</span>(summary_data_2<span class="sc">$</span>DATE.OCC), <span class="fu">max</span>(summary_data_2<span class="sc">$</span>DATE.OCC), <span class="at">by =</span> <span class="st">"month"</span>), <span class="st">"%b %Y"</span>), <span class="at">cex.axis =</span> <span class="fl">0.4</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>, <span class="at">las =</span> <span class="dv">0</span>, <span class="at">cex.axis =</span> <span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="creating_a_dashboard_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="chart-3" class="level3">
+<h3 class="anchored" data-anchor-id="chart-3">Chart 3</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lacrime2022 <span class="ot">&lt;-</span> lacrime[<span class="dv">303896</span><span class="sc">:</span><span class="dv">404565</span>, ]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>lacrime2022<span class="sc">$</span>Vict.Descent[lacrime2022<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">""</span>] <span class="ot">&lt;-</span> <span class="st">"X"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>lacrime2022<span class="sc">$</span>Vict.Descent[lacrime2022<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"C"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>lacrime2022<span class="sc">$</span>Vict.Descent[lacrime2022<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"F"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>lacrime2022<span class="sc">$</span>Vict.Descent[lacrime2022<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"J"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>lacrime2022<span class="sc">$</span>Vict.Descent[lacrime2022<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"K"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>lacrime2022<span class="sc">$</span>Vict.Descent[lacrime2022<span class="sc">$</span>Vict.Descent <span class="sc">==</span> <span class="st">"V"</span>] <span class="ot">&lt;-</span> <span class="st">"A"</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>filtered_data_3 <span class="ot">&lt;-</span> lacrime2022 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Vict.Descent <span class="sc">==</span> <span class="st">"A"</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>filtered_data_3<span class="sc">$</span>DATE.OCC <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(filtered_data_3<span class="sc">$</span>DATE.OCC)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>filtered_data_3 <span class="ot">&lt;-</span> filtered_data_3[<span class="fu">order</span>(filtered_data_3<span class="sc">$</span>DATE.OCC), ]</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>summary_data_3 <span class="ot">&lt;-</span> filtered_data_3 <span class="sc">%&gt;%</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(DATE.OCC) <span class="sc">%&gt;%</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Count =</span> <span class="fu">n</span>())</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a time-series scatterplot with no x-axis labels</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(summary_data_3<span class="sc">$</span>DATE.OCC, summary_data_3<span class="sc">$</span>Count, <span class="at">type =</span> <span class="st">"p"</span>, <span class="at">pch =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.4</span>,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">xlab =</span> <span class="st">"Date Occurred"</span>, <span class="at">ylab =</span> <span class="st">"Number of Victims"</span>, </span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Number of Asian Victims Daily in Los Angeles 2022"</span>, <span class="at">mgp =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">0</span>), </span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>     <span class="at">xaxt =</span> <span class="st">"n"</span>, <span class="at">yaxt =</span> <span class="st">"n"</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at =</span> <span class="fu">seq</span>(<span class="fu">min</span>(summary_data_3<span class="sc">$</span>DATE.OCC), <span class="fu">max</span>(summary_data_3<span class="sc">$</span>DATE.OCC), <span class="at">by =</span> <span class="st">"month"</span>), </span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>     <span class="at">labels =</span> <span class="fu">format</span>(<span class="fu">seq</span>(<span class="fu">min</span>(summary_data_3<span class="sc">$</span>DATE.OCC), <span class="fu">max</span>(summary_data_3<span class="sc">$</span>DATE.OCC), <span class="at">by =</span> <span class="st">"month"</span>), <span class="st">"%b %Y"</span>), <span class="at">cex.axis =</span> <span class="fl">0.6</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>, <span class="at">las =</span> <span class="dv">0</span>, <span class="at">cex.axis =</span> <span class="fl">0.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="creating_a_dashboard_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <hr>
-<p>The research article titled “Text Captioning Buffers Against the Effects of Background Noise and Hearing Loss on Memory for Speech” by Brennan R. Payne, Jack W. Silcox, Hannah A. Crandell, Amanda Lash, Sarah Hargus Ferguson, and Monika Lohani tested the following research hypothesis: “The presentation of realistic, assistive text-captioned speech will help offset the effects of background noise and hearing impairment on measures of speech memory involving immediate recall and delayed recognition memory accuracy, and delayed recognition confidence.” There were two sets of independent variables. The first set were the captioning variables involving “without text-captioning” and “with text-captioning.” The second set were the noise level variables involving “quietness,” “speech-to-noise ratio (SNR) of +7 dB,” and “SNR of +3 dB.” By putting those sets of independent variables together, the research design became a 2 x 3 factorial within-subjects design, which is 2 (caption vs.&nbsp;no caption) x 3 (no noise vs.&nbsp;+7 dB SNR vs.&nbsp;+3 dB SNR). The dependent variables, also the measured variables, were “immediate speech recall accuracy,” “delayed sentence recognition memory accuracy,” and “sentence recognition confidence.” There was a rationale for why the researchers tested these independent and dependent variables.</p>
-<p>One of the reasons they tested these variables is because sensorineural hearing loss is increasingly becoming more common amongst the public. It has become the third most prevalent chronic medical condition in older adults. This type of hearing loss makes it difficult to understand speech and it affects speech comprehension and memory when conversing and listening. The second reason they tested these variables is because this type of hearing loss within a noisy environment can add an additional cognitive load by affecting successful memory encoding. A good way to empathize with people with hearing loss who have trouble with memory encoding of speech in noisy environments is to consider a study by P. M. Rabbitt titled “Channel-capacity, Intelligibility and Immediate Recall” from 1968.</p>
-<p>Rabbitt presented the first part of a word list of spoken digits to young adult listeners who had no hearing loss without background noise. Then introduced background noise upon presenting the second part of the word list. After the presentation was done, memory recall for the first part of the word list was poorer than memory recall for the second part of the word list. This showed that, despite distorted speech affecting speech understanding of the second part of the word list and undistorted speech not affecting speech understanding of the first part of the word list, the noise interfered with the cognitive processes required for successful memory encoding of the first part of the word list. In other words, while the first part of the word list was hanging around in a person’s short-term memory ready to be stored in the working memory store of that person’s short-term memory for later consolidation into long-term memory, the person was distracted by trying hard to understand the second part of the word list, to the point, that opportunities to encode the first part of the word list were lost. While this shows the difficulty people with hearing loss have in noisy environments, there was another helpful solution in the research literature that showed some benefit in dealing with noise that also served as a fourth reason for testing the variables in the research study on text-captioning.</p>
-<p>It has been found in the research literature that speechreading, also known as lip-reading, has helped improve speech comprehension in a noisy environment. Orthographic cues from speechreading simultaneously presented with text was found to provide a secondary direct channel for word recognition. In other words, if an assistive visual representation like speechreading can help people, then how much or how much more could text-captioning benefit in resolving difficulties with speech understanding? This also goes with the need to help expand the research literature on this subject, which is the fifth reason for testing the variables in the research study.</p>
-<p>Expanding a limited research literature on text-captioning can help provide a better understanding of the cognitive mechanisms of the benefits of text-captioning. For example, the researchers of the text-captioning article state, “Text cues may modulate the perception of degraded speech” but “it is less clear what downstream benefits this improved clarity has on adults’ subsequent speech memory.” Finally, expanding the research literature on text-captioning can help validate and confirm the ecological validity of studies that were shown to have a generalizable, real-world application such as a study titled “Real-time Captioning for Improving Informed Consent: Patient and Physician Benefits” where real-time text-captioning was found to help patients retain more information during simulated informed consent. Now, let’s look at how the main research study on text-captioning was conducted.</p>
-<p>It was split into two experiments where the research hypothesis was tested on young adult listeners without hearing loss in the first experiment and a “cohort of older adults with a wide range of hearing acuity in the second experiment.” A sample size of forty-eight young adults participated in the first experiment, except, two subjects had to be excluded for further analysis because they did not complete the entire protocol. A sample size of thirty-one older adults participated in the second experiment. However, due to their wide age range from 61 to 80 years of age, variation in hearing loss and acuity levels, and inconsistent, nontransparent reporting of overall hearing ability, a hearing assessment, vision screening, cognitive assessment, and auditory control task had to be conducted.</p>
-<p>It was found that all the subjects of older adults had on average slight hearing loss of 16-25 dB to mild hearing loss of 26-40 dB. None of them showed any signs of dementia or Alzheimer’s. All of them were found to be able to see the captions well enough without any difficulty. And they showed the ability to understand speech clearly enough at a certain threshold in the noise environments, which were the noise environments with an SNR of +3 dB and +7 dB. Despite having different types of subjects, both experiments were conducted in the same manner. Ninety propositionally dense sentences each containing eighteen words in length covering diverse topics in science, nature, and history were presented. They were presented in two blocks of forty-five sentences with one block presented without text-captioning and the other one with text-captioning. Both blocks were presented in the three noise environments of no noise and the two SNR levels of +7 and +3 dB. Data was collected for immediate speech recall by having the subjects verbalize aloud as much of a sentence they remembered 5,000ms (i.e., 5 seconds) after the whole sentence disappeared from the screen 1,000ms (i.e., 1 second) after the offset of the final word of the sentence. Then for delayed recognition memory recall, they were instructed to indicate whether they heard a particular sentence from a set of forty-two sentences after each block of forty-five sentences was administered. Finally, for recognition memory confidence they were to rate their confidence in their response on a Likert scale of 1 to 5 (i.e., 1 = no confidence and 5 = complete confidence). The data collected led to the discovery of certain findings.</p>
-<p>Based on the statistical data there were significant main effects of only “Caption” and of “Caption” and “Noise,” and significant interactions of “Caption” x “Noise” from the data collected in both experiments for immediate speech recall, delayed recognition memory recall, and memory recognition confidence. Moreover, there were statistically significant interactions between “Caption” x “Noise” x “Hearing Level,” “Noise” x “Hearing Level,” and “Caption” x “Hearing Level” in experiment two. Based on these findings, the researchers concluded, “Text captions improved not only immediate recall, but also long-term memory outcomes in younger and older adults [in both experiments] and [reduced] both the effects of increased background noise [in both experiments] and hearing loss [in experiment one].” While the benefits from captions was greatest for older adults with hearing loss, it also provides broad benefits to literate adult listeners with or without hearing loss. Despite the positive findings, the exact reason for why text captions yield improvements in speech memory cannot be gleaned from the results.</p>
-<p>To conclude, future research could examine how text and speech information is utilized in real-time during encoding of text and speech through electroencephalography, EEG, or eye-tracking. Other future research could investigate the role intermodal asynchrony plays on the benefits provided by text captions and also test subjects with severe-to-profound hearing loss involving young and older subjects.</p>
 
 
 </section>
